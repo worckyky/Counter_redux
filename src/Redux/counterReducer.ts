@@ -18,32 +18,38 @@ type viewDataType = {
     badData: string
 }
 
-export type stateType = {
+export type counterType = {
     values: valuesType,
     setValues: setValuesType,
     viewData: viewDataType
 }
 
+export type RootStateType = {
+    counter: counterType
+}
 
-let initialState: stateType = {
-    values: {
-        minValue: 0,
-        maxValue: 10
-    },
-    setValues: {
-        setMinValue: 0,
-        setMaxValue: 0,
-    },
-    viewData: {
-        data: 0,
-        setData: 'Укажите данные счетчика и нажмите на кнопку: "Задать значение"',
-        noSimilar: 'Значения не могут быть одинаковыми!',
-        badData: 'Параметры счетчика указаны неверно!'
+
+let initialState: RootStateType = {
+    counter: {
+        values: {
+            minValue: 0,
+            maxValue: 10
+        },
+        setValues: {
+            setMinValue: 0,
+            setMaxValue: 0,
+        },
+        viewData: {
+            data: 0,
+            setData: 'Укажите данные счетчика и нажмите на кнопку: "Задать значение"',
+            noSimilar: 'Значения не могут быть одинаковыми!',
+            badData: 'Параметры счетчика указаны неверно!'
+        }
     }
 }
 
 
-export const counterReducer = (state:stateType = initialState, actions: ActionType) => {
+export const counterReducer = (state:RootStateType = initialState, actions: ActionType) => {
     let copyState = {...state}
     return copyState
 };

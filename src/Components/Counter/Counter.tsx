@@ -8,8 +8,8 @@ import {valuesType} from '../../Redux/counterReducer';
 type CounterType = {
     values: valuesType
 }
+
 const Counter: React.FC<CounterType> = ({values}) => {
-    debugger
     return (
         <div className={'Counter__container'}>
             <div className={'Counter__data'}>
