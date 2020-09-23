@@ -1,11 +1,11 @@
-import React, { Dispatch } from "react";
+import React, {Dispatch} from "react";
 import Counter from '../Counter/Counter'
 import {connect} from 'react-redux'
-import { RootStateType } from '../../Redux/counterReducer';
-import { ActionType } from '../../Redux/actions';
+import {RootStateType} from '../../Redux/counterReducer';
+import {ActionType} from '../../Redux/actions';
 
 
-let mapStateToProps = (state:RootStateType) => {
+let mapStateToProps = (state: RootStateType) => {
     return {
         values: state.counter.values
     }
